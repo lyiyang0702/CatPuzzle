@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class TestLipstick : MonoBehaviour, IPointerClickHandler,IBeginDragHandler, IEndDragHandler, IDragHandler
+public class TestLipstick : MonoBehaviour, IPointerClickHandler,IBeginDragHandler, IEndDragHandler, IDragHandler, IMoveable
 {
     public Point p1;
     public Point p2;
     public float RotateDegree;
+    private bool isInContainer;
     float zAxis;
     Vector3 prevPos;
     [SerializeField]bool isOverlapped;
@@ -21,7 +22,7 @@ public class TestLipstick : MonoBehaviour, IPointerClickHandler,IBeginDragHandle
     {
         Vector3 screenToWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         gameObject.transform.position = new Vector3(screenToWorldPos.x, screenToWorldPos.y, 0);
-        Debug.Log("Overlap state: " + isOverlapped);
+        // Debug.Log("Overlap state: " + isOverlapped);
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -74,6 +75,12 @@ public class TestLipstick : MonoBehaviour, IPointerClickHandler,IBeginDragHandle
         {
            isOverlapped = true;
         }
+        
+        if (collision.gameObject.tag == "Container")
+        {
+            Debug.Log("IN");
+            isInContainer = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -82,10 +89,21 @@ public class TestLipstick : MonoBehaviour, IPointerClickHandler,IBeginDragHandle
         {
             isOverlapped = false;
         }
+        
+        if (collision.gameObject.tag == "Container")
+        {
+           
+            isInContainer = false;
+        }
     }
     // Update is called once per frame
     void Update()
     {
+        
+    }
 
+    public bool IsInContainer()
+    {
+        return isInContainer;
     }
 }
