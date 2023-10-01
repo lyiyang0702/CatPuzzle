@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class TestLipstick : MonoBehaviour, IPointerClickHandler,IBeginDragHandler, IEndDragHandler, IDragHandler, IMoveable
+public class MoveableItem : MonoBehaviour, IPointerClickHandler,IBeginDragHandler, IEndDragHandler, IDragHandler, IMoveable
 {
-    public Point p1;
-    public Point p2;
-    public float RotateDegree;
+public float RotateDegree;
     private bool isInContainer;
     float zAxis;
     Vector3 prevPos;
     [SerializeField]bool isOverlapped;
 
+    public void ToggleOverlapState(bool state)
+    {
+        isOverlapped = state;
+    }
     public void OnBeginDrag(PointerEventData eventData)
     {
         prevPos = gameObject.transform.position;
@@ -31,7 +33,7 @@ public class TestLipstick : MonoBehaviour, IPointerClickHandler,IBeginDragHandle
         {
             gameObject.transform.position = prevPos;
         }
-        isOverlapped = false;
+        //isOverlapped = false;
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -68,12 +70,14 @@ public class TestLipstick : MonoBehaviour, IPointerClickHandler,IBeginDragHandle
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         //Debug.Log("Overlapped");
         if (collision.gameObject.tag == "Item")
         {
-           isOverlapped = true;
+            ToggleOverlapState(true);
+            Debug.Log(gameObject.name + " collides with " + collision.gameObject.name);
+            //collision.gameObject.GetComponent<MoveableItem>().ToggleOverlapState(true);
         }
         
         if (collision.gameObject.tag == "Container")
@@ -83,11 +87,12 @@ public class TestLipstick : MonoBehaviour, IPointerClickHandler,IBeginDragHandle
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    void OnTriggerExit2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Item")
         {
-            isOverlapped = false;
+            ToggleOverlapState(false);
+
         }
         
         if (collision.gameObject.tag == "Container")
