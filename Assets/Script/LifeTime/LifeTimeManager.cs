@@ -39,6 +39,7 @@ public class LifeTimeManager : MonoBehaviour
 
     private void HardReset()
     {
+        Destroy(gameObject);
         SceneManager.LoadScene("Index");
     }
 
