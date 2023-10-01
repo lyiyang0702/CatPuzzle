@@ -9,7 +9,8 @@ public float RotateDegree;
     private bool isInContainer;
     float zAxis;
     Vector3 prevPos;
-    [SerializeField]bool isOverlapped;
+    public bool isOverlapped;
+    public SpriteRenderer spriteRenderer;
 
     public void ToggleOverlapState(bool state)
     {
@@ -18,12 +19,14 @@ public float RotateDegree;
     public void OnBeginDrag(PointerEventData eventData)
     {
         prevPos = gameObject.transform.position;
+        Debug.Log("Begin Dragging");
     }
 
     public void OnDrag(PointerEventData eventData)
     {
         Vector3 screenToWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         gameObject.transform.position = new Vector3(screenToWorldPos.x, screenToWorldPos.y, 0);
+        spriteRenderer.sortingOrder = 2;
         // Debug.Log("Overlap state: " + isOverlapped);
     }
 
@@ -33,6 +36,7 @@ public float RotateDegree;
         {
             gameObject.transform.position = prevPos;
         }
+        spriteRenderer.sortingOrder = 0;
         //isOverlapped = false;
     }
 
@@ -76,7 +80,7 @@ public float RotateDegree;
         if (collision.gameObject.tag == "Item")
         {
             ToggleOverlapState(true);
-            Debug.Log(gameObject.name + " collides with " + collision.gameObject.name);
+            //Debug.Log(gameObject.name + " collides with " + collision.gameObject.name);
             //collision.gameObject.GetComponent<MoveableItem>().ToggleOverlapState(true);
         }
         
@@ -97,7 +101,7 @@ public float RotateDegree;
         
         if (collision.gameObject.tag == "Container")
         {
-           
+            Debug.Log("OUT");
             isInContainer = false;
         }
     }

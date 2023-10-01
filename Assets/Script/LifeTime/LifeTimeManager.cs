@@ -33,6 +33,7 @@ public class LifeTimeManager : MonoBehaviour
         }
         else
         {
+            Debug.Log("Level Up");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }

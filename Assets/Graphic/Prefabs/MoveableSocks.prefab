@@ -1,0 +1,118 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6820318353485565608
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2072121544591982112, guid: 9ad4117da552d3b468824ac1e0742ee0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d02c4e7c2375b1b4f806a56e892451f5, type: 3}
+    - target: {fileID: 2072121544591982112, guid: 9ad4117da552d3b468824ac1e0742ee0, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2072121544591982112, guid: 9ad4117da552d3b468824ac1e0742ee0, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2072121544591982112, guid: 9ad4117da552d3b468824ac1e0742ee0, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4506968447026410315, guid: 9ad4117da552d3b468824ac1e0742ee0, type: 3}
+      propertyPath: m_Name
+      value: MoveableSocks
+      objectReference: {fileID: 0}
+    - target: {fileID: 4506968447026410319, guid: 9ad4117da552d3b468824ac1e0742ee0, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4506968447026410319, guid: 9ad4117da552d3b468824ac1e0742ee0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4506968447026410319, guid: 9ad4117da552d3b468824ac1e0742ee0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4506968447026410319, guid: 9ad4117da552d3b468824ac1e0742ee0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4506968447026410319, guid: 9ad4117da552d3b468824ac1e0742ee0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4506968447026410319, guid: 9ad4117da552d3b468824ac1e0742ee0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4506968447026410319, guid: 9ad4117da552d3b468824ac1e0742ee0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4506968447026410319, guid: 9ad4117da552d3b468824ac1e0742ee0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4506968447026410319, guid: 9ad4117da552d3b468824ac1e0742ee0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4506968447026410319, guid: 9ad4117da552d3b468824ac1e0742ee0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4506968447026410319, guid: 9ad4117da552d3b468824ac1e0742ee0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9ad4117da552d3b468824ac1e0742ee0, type: 3}
+--- !u!1 &6930288328989392355 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4506968447026410315, guid: 9ad4117da552d3b468824ac1e0742ee0, type: 3}
+  m_PrefabInstance: {fileID: 6820318353485565608}
+  m_PrefabAsset: {fileID: 0}
+--- !u!60 &5853285779761731995
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6930288328989392355}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.4141702, y: 0.51629764}
+      - {x: -0.45828468, y: 0.24250787}
+      - {x: -0.48197532, y: 0.07373966}
+      - {x: 0.13173212, y: -0.061206937}
+      - {x: 0.2053208, y: -0.28230405}
+      - {x: 0.26018995, y: -0.3905817}
+      - {x: 0.3260908, y: -0.5063188}
+      - {x: 0.4113584, y: -0.5498251}
+      - {x: 0.5605771, y: -0.76064664}
+      - {x: 0.66046405, y: -0.7084304}
+      - {x: 0.71760935, y: -0.41726458}
+      - {x: 0.6541508, y: -0.03469927}
+      - {x: 0.5429326, y: 0.3513411}

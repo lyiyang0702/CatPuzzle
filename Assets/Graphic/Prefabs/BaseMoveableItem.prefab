@@ -153,3 +153,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RotateDegree: 30
   isOverlapped: 0
+  spriteRenderer: {fileID: 2072121544591982112}

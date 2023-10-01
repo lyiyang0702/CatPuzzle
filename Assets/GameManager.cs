@@ -9,7 +9,9 @@ public class GameManager : MonoBehaviour
     private List<Vector2> originalPos;
     private List<Quaternion> originalRotation;
     private Transform moveables;
-    
+
+    public static GameManager instance;
+
     public void ResetLevel()
     {
         for (int i = 0; i < moveables.childCount; i++)
@@ -39,11 +41,11 @@ public class GameManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         CheckLevelAccomplish();
     }
-    
+
     public void CheckLevelAccomplish()
     {
         for (int i = 0; i < moveables.childCount; i++)
@@ -53,6 +55,12 @@ public class GameManager : MonoBehaviour
                 return;
             }
         }
-        LifeTimeBroadCaster.ProceedLevel();
+        StartCoroutine(LevelUp());
     }
+
+    IEnumerator LevelUp()
+    {
+        yield return new WaitForSeconds(5);
+        LifeTimeBroadCaster.ProceedLevel();
+    } 
 }

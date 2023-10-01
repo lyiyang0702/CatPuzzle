@@ -10,10 +10,22 @@ PrefabInstance:
     - target: {fileID: 2072121544591982112, guid: 9ad4117da552d3b468824ac1e0742ee0, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: c1ff4ee3d3c629d42a5713daa06d57f8, type: 3}
+      objectReference: {fileID: 21300000, guid: ec3468f681b7e6d4eb919d34cb1862ce, type: 3}
+    - target: {fileID: 2072121544591982112, guid: 9ad4117da552d3b468824ac1e0742ee0, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2072121544591982112, guid: 9ad4117da552d3b468824ac1e0742ee0, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2072121544591982112, guid: 9ad4117da552d3b468824ac1e0742ee0, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4506968447026410315, guid: 9ad4117da552d3b468824ac1e0742ee0, type: 3}
       propertyPath: m_Name
-      value: MoveableBall
+      value: MoveableBasketball
       objectReference: {fileID: 0}
     - target: {fileID: 4506968447026410319, guid: 9ad4117da552d3b468824ac1e0742ee0, type: 3}
       propertyPath: m_RootOrder
@@ -59,6 +71,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8434162194169104540, guid: 9ad4117da552d3b468824ac1e0742ee0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.024
+      objectReference: {fileID: 0}
+    - target: {fileID: 8434162194169104540, guid: 9ad4117da552d3b468824ac1e0742ee0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.153
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ad4117da552d3b468824ac1e0742ee0, type: 3}
 --- !u!1 &5237596624875881417 stripped
@@ -79,6 +99,6 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.106205106}
   serializedVersion: 2
-  m_Radius: 0.55
+  m_Radius: 0.97

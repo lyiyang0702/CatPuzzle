@@ -10,10 +10,22 @@ PrefabInstance:
     - target: {fileID: 2072121544591982112, guid: 9ad4117da552d3b468824ac1e0742ee0, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 88a0e40300e37b94cbbb228e704d5bf9, type: 3}
+      objectReference: {fileID: 21300000, guid: 61bc5e7b4405ba6498b6290543848e4f, type: 3}
+    - target: {fileID: 2072121544591982112, guid: 9ad4117da552d3b468824ac1e0742ee0, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2072121544591982112, guid: 9ad4117da552d3b468824ac1e0742ee0, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2072121544591982112, guid: 9ad4117da552d3b468824ac1e0742ee0, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4506968447026410315, guid: 9ad4117da552d3b468824ac1e0742ee0, type: 3}
       propertyPath: m_Name
-      value: MoveableScissor
+      value: MoveableTriangle
       objectReference: {fileID: 0}
     - target: {fileID: 4506968447026410319, guid: 9ad4117da552d3b468824ac1e0742ee0, type: 3}
       propertyPath: m_RootOrder
@@ -60,6 +72,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8434162194169104540, guid: 9ad4117da552d3b468824ac1e0742ee0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8434162194169104540, guid: 9ad4117da552d3b468824ac1e0742ee0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8434162194169104540, guid: 9ad4117da552d3b468824ac1e0742ee0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8434162194169104540, guid: 9ad4117da552d3b468824ac1e0742ee0, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
@@ -78,6 +102,10 @@ PrefabInstance:
     - target: {fileID: 8434162194169104540, guid: 9ad4117da552d3b468824ac1e0742ee0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8434162194169104540, guid: 9ad4117da552d3b468824ac1e0742ee0, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ad4117da552d3b468824ac1e0742ee0, type: 3}
@@ -111,24 +139,6 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.0046831947, y: 0.31157017}
-      - {x: -0.4649246, y: 0.37652418}
-      - {x: -0.6469307, y: 0.59572625}
-      - {x: -0.94169015, y: 0.6789894}
-      - {x: -1.1884364, y: 0.47103563}
-      - {x: -1.1230346, y: 0.26240838}
-      - {x: -0.8731961, y: 0.13707608}
-      - {x: -0.1403106, y: 0.19065413}
-      - {x: -0.15247081, y: 0.087561466}
-      - {x: -0.8291349, y: -0.13129902}
-      - {x: -1.0571575, y: -0.33912188}
-      - {x: -0.9851275, y: -0.57690823}
-      - {x: -0.78916264, y: -0.65447164}
-      - {x: -0.576761, y: -0.5832132}
-      - {x: -0.4797204, y: -0.45563078}
-      - {x: -0.35415974, y: -0.17246449}
-      - {x: -0.039762855, y: 0.01522553}
-      - {x: 0.10674595, y: 0.09915296}
-      - {x: 1.1826569, y: 0.2306972}
-      - {x: 0.3995168, y: 0.23590359}
-      - {x: 1.0868692, y: 0.58064246}
+    - - {x: 1.8357556, y: -0.51817715}
+      - {x: -0.95754313, y: 1.1075203}
+      - {x: -0.78709024, y: -0.6073911}

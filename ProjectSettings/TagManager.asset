@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Item
   - Container
+  - Cat
   layers:
   - Default
   - TransparentFX
@@ -42,4 +43,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Box
+    uniqueID: 3748328237
+    locked: 0
+  - name: Items
+    uniqueID: 888211567
     locked: 0
