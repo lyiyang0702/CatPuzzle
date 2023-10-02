@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour
     private List<Vector2> originalPos;
     private List<Quaternion> originalRotation;
     private Transform moveables;
-
     public static GameManager instance;
 
     public void ResetLevel()
@@ -50,17 +49,30 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < moveables.childCount; i++)
         {
-            if (!moveables.GetChild(i).GetComponent<IMoveable>().IsInContainer())
+            IMoveable item = moveables.GetChild(i).GetComponent<IMoveable>();
+            if (!item.IsInContainer())
+            {
+                return;
+            }            
+            
+            if (item.IsOverlapped())
             {
                 return;
             }
+
+            if (item.IsDragging())
+            {
+                return;
+            }
+
         }
+
         StartCoroutine(LevelUp());
     }
 
     IEnumerator LevelUp()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3f);
         LifeTimeBroadCaster.ProceedLevel();
-    } 
+    }
 }

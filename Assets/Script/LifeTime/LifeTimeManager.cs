@@ -7,12 +7,15 @@ using Object = System.Object;
 
 public class LifeTimeManager : MonoBehaviour
 {
+    public AudioSource StartMusic;
+    public AudioSource BackgroundMusic;
     // Start is called before the first frame update
     void Start()
     {
         DontDestroyOnLoad(this);
         LifeTimeBroadCaster.OnNextLevelEvent += NextLevel;
         LifeTimeBroadCaster.OnQuit += Quit;
+        LifeTimeBroadCaster.OnRestart += Restart;
     }
 
     // Update is called once per frame
@@ -33,7 +36,12 @@ public class LifeTimeManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Level Up");
+            if (StartMusic)
+            {
+                StartMusic.Stop();
+            }
+
+            BackgroundMusic.Play();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
@@ -47,6 +55,11 @@ public class LifeTimeManager : MonoBehaviour
     private void Quit(Object o, EventArgs eventArgs)
     {
         Application.Quit();
+    }    
+    
+    private void Restart(Object o, EventArgs eventArgs)
+    {
+        HardReset();
     }
     
 }

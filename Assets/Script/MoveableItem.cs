@@ -10,33 +10,37 @@ public float RotateDegree;
     float zAxis;
     Vector3 prevPos;
     public bool isOverlapped;
+    bool isDragging;
     public SpriteRenderer spriteRenderer;
 
     public void ToggleOverlapState(bool state)
     {
         isOverlapped = state;
     }
-    public void OnBeginDrag(PointerEventData eventData)
+    public virtual void OnBeginDrag(PointerEventData eventData)
     {
         prevPos = gameObject.transform.position;
+        isDragging = true;
         Debug.Log("Begin Dragging");
     }
 
-    public void OnDrag(PointerEventData eventData)
+    public virtual void  OnDrag(PointerEventData eventData)
     {
         Vector3 screenToWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         gameObject.transform.position = new Vector3(screenToWorldPos.x, screenToWorldPos.y, 0);
-        spriteRenderer.sortingOrder = 2;
+        if (spriteRenderer != null) { spriteRenderer.sortingOrder = 2; }
+
         // Debug.Log("Overlap state: " + isOverlapped);
     }
 
-    public void OnEndDrag(PointerEventData eventData)
+    public virtual void OnEndDrag(PointerEventData eventData)
     {
+        isDragging = false;
         if (isOverlapped)
         {
             gameObject.transform.position = prevPos;
         }
-        spriteRenderer.sortingOrder = 0;
+        if (spriteRenderer != null) { spriteRenderer.sortingOrder = 1; }
         //isOverlapped = false;
     }
 
@@ -79,7 +83,7 @@ public float RotateDegree;
         //Debug.Log("Overlapped");
         if (collision.gameObject.tag == "Item")
         {
-            ToggleOverlapState(true);
+            isOverlapped = true;
             //Debug.Log(gameObject.name + " collides with " + collision.gameObject.name);
             //collision.gameObject.GetComponent<MoveableItem>().ToggleOverlapState(true);
         }
@@ -95,7 +99,7 @@ public float RotateDegree;
     {
         if(collision.gameObject.tag == "Item")
         {
-            ToggleOverlapState(false);
+            isOverlapped = false;
 
         }
         
@@ -114,5 +118,15 @@ public float RotateDegree;
     public bool IsInContainer()
     {
         return isInContainer;
+    }
+
+    public bool IsOverlapped()
+    {
+        return isOverlapped;
+    }
+
+    public bool IsDragging()
+    {
+        return isDragging;
     }
 }
